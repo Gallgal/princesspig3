@@ -11,12 +11,12 @@
 		*{box-sizing: border-box ;}
 		html{font-size: 16px; font-family: 'Noto Sans KR', sans-serif; word-break: keep-all;}
 		body,h1,h2,h3,h4,p,ul,li{margin: 0; padding: 0;}
-		h1{font-size: 5rem; line-height: 6rem;}
-		h2{font-size: 4.55rem; line-height: 5.7rem;margin-bottom: 15px;}
-		h3{font-size: 2.5rem;}
-		h4{font-size: 2rem;}
-		p{font-size: 1.5rem;}
-		b{font-weight: 700;}
+		h1{font-size: 6rem; line-height: 9rem;}
+		h2{font-size: 4.55rem;  line-height: 6rem;margin-bottom: 15px;}
+		h3{font-size: 2.5rem; font-weight: 500;}
+		h4{font-size: 2rem; line-height: 3.5rem;}
+		p{font-size: 1.6rem; line-height: 3rem;}
+		b{font-weight: 400;}
 		
 		a{display: inline-block;
 			font-size: 1.5rem;
@@ -26,7 +26,10 @@
 			text-align: center;
 			line-height: 95px;
 			border-radius: 50px;
-			border: 1px solid white;}
+			border: 1px solid white;
+			text-decoration: none;
+			color: white;
+			box-shadow: 0 0 4px white;}
 		a:hover{background: white; color: black;  box-shadow: 0px 0px 20px white;
 			transition: all 0.3s; border: none;}
 		section{padding: 100px;}
@@ -44,11 +47,14 @@
 		.medium{font-weight: 600;}
 		.bold{font-weight: 700;}
 		.black{background: #0d0d0d; color: white;}
+		.white{background: white;}
 		.text-white{color: white;}
 		.textalign-right{text-align: right;}
 		.textalign-center{text-align: center;}
 		.gradient{}
 		.background-fixed{background: url('princess.png'); filter: brightness(0.2); background-size: 100%; height: 300px ;background-attachment: fixed; color: white; margin-top: 25vh}
+		.mouse{position: relative ;animation: mouse 5s infinite;}
+		@keyframes mouse { 0%{ left: 0px; top: 0px; } 25%{ left:200px; top: 0px; } 50%{ left:200px ; top:200px } 75%{ left: 0px; top:200px } 100%{left: 0px; top: 0px} }
 .marquee {overflow: hidden;}
 
 .marquee-content {
@@ -67,7 +73,13 @@
   display: block;
   width: 100%;
 }
-
+.errb {display: inline-block;
+    			position:relative;
+    			background: url('black.svg') bottom repeat-x;}
+.num1{color: white;position: absolute; top: 5vw; left: 7vw;}
+.num2{text-align: right; position: absolute; bottom: 5vw; right: 7vw;}
+div.num1:hover{transform: scale(1.07); transition: all 1s;}
+div.num2:hover{transform: scale(1.07); transition: all 1s;}
 @keyframes scrolling {
   0% { transform: translateX(0); }
   100% { transform: translatex(-128vw); }
@@ -80,18 +92,21 @@
 	</style>
 </head>
 <body>
-<section>
-	<div class="row">
+<section style="height: 100vh; width: 100vw; position: fixed;  z-index: -1;">
+	<div class="row" style="height: 20vh;">
 		<div class="col-2">
-			<img src="curser.png" style="width: 100px">
-		</div>
+			<img src="curser.png" style="width: 100px" class="mouse"></div>
+		<div class="col-2"></div></div>
+	<div class="row">
+		<div class="col-2"></div>
 		<div class="col-2">
 			<h2>전혀 효과 없었어!</h2>
-			<p>그도 그럴 것이, 한 게시글이 삭제될 때마다 여섯개의 글이 업로드 되고 있대. SNS는 놀라워! 이런 소식만큼은 전파속도가 무지 빠르다니까? 결국 사건은 전국으로 확산되고야 말았어.</p>
+			<p>그도 그럴 것이, 한 게시글을 삭제할 때면 <b class="errb"><b class="serif">여섯개의 글</b>이 업로드되고 있었대.</b><br>SNS는 놀라워! 이런 소식만큼은 속도가 무지 빠르다니까? 결국 사건의 규모는 전국으로 확산되고야 말았어.</p>
 		</div>
 	</div>
 </section>
-<section style="padding: 0">
+<section style="height:100vh; z-index:0"></section>
+<section style="background-color: rgba(105, 105, 107, 1.0); padding-right: 0; padding-left: 0;">
 	<div class="marquee">
  		 <div class="marquee-content"> 
  		   <div class="marquee-item">
@@ -164,7 +179,7 @@
  
   </div></div>
   </section>
-  <section>
+  <section class="white">
 
 	<div class="row">
 		<div class="col-2"></div>
@@ -179,8 +194,11 @@
 	</div>
 	</div>
 </section>
-<section style="padding:0;">
+<section class="white" style="padding:0; position: relative;">
 	<img src="3.svg" style="filter: opacity(95%);">
+		<div class="num1"><h1>최첨단 CG로 방송을<br>조작한다</h1></div>
+		<div class="num2"><h1>총동원하여<br>범인을 구속한다</h1></div>
+	</div>
 </section>
 <section class="black">
 <div class="row" style=" padding-bottom: 10px; ">
@@ -192,7 +210,7 @@
 	</div>
 	<div class="row" style="padding-top: 20px;">
 		<div class="col-1 textalign-center">
-		<a>방송을 조작한다</a>
+		<a href="https://gallgal.github.io/princesspig4/">방송을 조작한다</a>
 		<a href="https://gallgal.github.io/princesspig4/">범인을 구속한다</a></div>
 	</div>
 </section>
